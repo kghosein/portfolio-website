@@ -1,0 +1,20 @@
+@use "./variables";
+
+%common-a-style {
+  color: variables.$color-orange;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  border: 5px solid variables.$color-purple;
+  text-decoration: underline;
+  font-family: variables.$font-mukta;
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  &:active {
+    color: variables.$color-orange;
+  }
+
+  &:hover {
+    text-decoration-style: wavy;
+  }
+}

@@ -1,0 +1,25 @@
+@use "../common/variables";
+
+.flex-hoc {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+
+  &__el {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:nth-child(1) {
+      width: 50%;
+    }
+
+    &:nth-child(2) {
+      width: 50%;
+    }
+
+    &:nth-child(3) {
+      width: 100%;
+    }
+  }
+}

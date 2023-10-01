@@ -1,0 +1,35 @@
+{
+  "footer": {
+    "react": {
+      "href": "https://react.dev/",
+      "text": "React"
+    },
+    "netlify": {
+      "href": "https://www.netlify.com/",
+      "text": "Netlify"
+    },
+    "repoLink": {
+      "href": "#",
+      "text": "Github"
+    }
+  },
+  "header": {
+    "title": "Khalaf Hosein"
+  },
+  "nav": {
+    "navLinks": [
+      {
+        "text": "About",
+        "link": "/"
+      },
+      {
+        "text": "Resume",
+        "link": "resume"
+      }
+    ],
+    "hire": {
+      "link": "hire-me",
+      "text": "Hire Me!"
+    }
+  }
+}

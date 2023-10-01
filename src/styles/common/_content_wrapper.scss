@@ -1,0 +1,32 @@
+@use "./variables";
+@use "./headings";
+@use "../layouts/themify";
+@use "../layouts/break_points";
+
+.content-wrapper {
+  min-height: 100vh;
+  box-shadow: inset 0 5px 0 0 variables.$color-purple,
+    inset 0 -5px 0 0 variables.$color-purple;
+
+  @include break_points.mobile {
+    margin-top: 0;
+  }
+
+  $themes: (
+    light: (variables.$background-color: variables.$color-gray,
+    ),
+    dark: (variables.$background-color: variables.$color-black,
+    )
+  );
+
+  @include themify.themify($themes) {
+    background-color: themify.themed(variables.$background-color);
+  }
+
+  main {
+
+    h2 {
+      @extend %headings;
+    }
+  }
+}

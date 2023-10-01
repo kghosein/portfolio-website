@@ -1,0 +1,54 @@
+@use "../common/variables";
+@use "../layouts/themify";
+@use "../common/common_styling";
+
+.hire-me {
+
+  .page-heading {
+
+    svg {
+      transform: translateY(4px);
+    }
+  }
+
+  &__description {
+    font-family: variables.$font-mukta;
+    font-size: 1.5rem;
+
+    $themes : (light: (variables.$text-color: variables.$color-black,
+        ),
+        dark: (variables.$text-color: variables.$color-white,
+        ));
+
+    @include themify.themify($themes) {
+      color: themify.themed(variables.$text-color);
+    }
+  }
+
+  .work-links {
+    margin-top: 3rem;
+
+    .flex-hoc__el {
+      flex-direction: column;
+    }
+
+    &__a {
+      @extend %common-a-style;
+      padding: 0.9rem 3.5rem;
+    }
+
+    &__description {
+      font-size: 1.2rem;
+      font-family: variables.$font-mukta;
+
+      $themes : (light: (variables.$text-color: variables.$color-black,
+          ),
+          dark: (variables.$text-color: variables.$color-white,
+          ));
+
+      @include themify.themify($themes) {
+        color: themify.themed(variables.$text-color);
+      }
+    }
+  }
+}

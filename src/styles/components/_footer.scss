@@ -1,0 +1,27 @@
+@use "../common/variables";
+@use "../layouts/themify";
+
+.footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-family: variables.$font-mukta;
+  font-weight: 400;
+
+  $themes : (light: (variables.$text-color: variables.$color-orange,
+      ),
+      dark: (variables.$text-color: variables.$color-blue,
+      ));
+
+  @include themify.themify($themes) {
+    color: themify.themed(variables.$text-color);
+  }
+
+  a {
+    color: variables.$color-purple;
+
+    &:active {
+      color: variables.$color-black;
+    }
+  }
+}

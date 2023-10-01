@@ -1,0 +1,120 @@
+@use "../common/variables";
+@use "../layouts/break_points";
+@use "../layouts/themify";
+@use "../common/common_styling";
+
+.hero-section {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+
+  @include break_points.desktop-small {
+    grid-auto-flow: row;
+    grid-template-columns: unset;
+  }
+
+  &__image {
+
+    img {
+      border-radius: 1.5rem;
+      transform: translate(-4em, 4em) scale(1.3);
+
+      @include break_points.desktop-small {
+        transform: translateX(0) scale(1.1);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__description {
+    font-family: variables.$font-casual;
+    font-weight: 500;
+    font-size: 1.85rem;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+
+    p {
+      text-align: center;
+    }
+
+    $themes : (light: (variables.$text-color: variables.$color-black,
+      ),
+      dark: (variables.$text-color: variables.$color-white,
+      ));
+
+    @include themify.themify($themes) {
+      color: themify.themed(variables.$text-color);
+    }
+
+    &::before {
+      content: "\0022";
+      position: absolute;
+      transform: scale(12);
+      top: 104px;
+      left: -70px;
+      z-index: -1;
+      color: variables.$color-orange;
+
+      @include break_points.desktop-small {
+        top: 98px;
+        left: 0;
+      }
+    }
+  }
+}
+
+.projects-section {
+  margin-top: 12rem;
+
+  &__description {
+    margin-top: 3rem;
+
+    p {
+      font-size: 1.5rem;
+      font-family: variables.$font-mukta;
+      font-weight: 400;
+
+      $themes : (light: (variables.$text-color: variables.$color-black,
+          ),
+          dark: (variables.$text-color: variables.$color-white,
+          ));
+
+      @include themify.themify($themes) {
+        color: themify.themed(variables.$text-color);
+      }
+
+      a {
+        @extend %common-a-style;
+        border: none;
+        border-radius: 0;
+        display: inline-flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.social-links {
+  margin-top: 8rem;
+
+  .flex-hoc__el {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    &:nth-child(3) {
+      margin-top: 2rem;
+    }
+  }
+
+  &__a {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,28 @@
+// common
+@use "./common/reset";
+@use "./common/variables";
+@use "./common/containers";
+@use "./common/content_wrapper";
+@use "./common/headings";
+@use "./common/nav";
+@use "./common/common_styling";
+@use "./common/flex_hoc";
+
+// components
+@use "./components/header";
+@use "./components/about";
+@use "./components/footer";
+@use "./components/hire_me";
+@use "./components/toggle_mode_buttons";
+@use "./components/main";
+@use "./components/resume";
+@use "./components/render_pdf";
+
+// layouts
+@use "./layouts/break_points";
+@use "./layouts/themify";
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/csshake/1.7.0/csshake-slow.min.css');

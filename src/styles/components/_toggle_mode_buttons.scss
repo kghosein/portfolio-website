@@ -1,0 +1,39 @@
+@use "../common/variables";
+
+.toggle-mode-buttons {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+
+  button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &[data-mode="dark"] {
+
+    &:hover {
+      svg {
+        box-shadow: #ffd60a 0px 1px 30px -2px;
+      }
+    }
+
+    svg {
+      box-shadow: #ffd60a 0px 1px 4px;
+    }
+  }
+
+  &[data-mode="light"] {
+
+    &:hover {
+      svg {
+        box-shadow: #adb5bd 0px 1px 30px -2px;
+      }
+    }
+
+    svg {
+      box-shadow: #adb5bd 0px 1px 4px;
+    }
+  }
+}

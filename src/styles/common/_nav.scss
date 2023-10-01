@@ -1,0 +1,103 @@
+@use "../common/variables";
+@use "../layouts/themify";
+
+.nav {
+  margin-top: 3rem;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+  }
+
+  &__link {
+    font-size: 1.7rem;
+    font-family: variables.$font-mukta;
+    font-weight: 400;
+
+    $themes : (light: (variables.$text-color: variables.$color-black,
+        ),
+        dark: (variables.$text-color: variables.$color-white,
+        ));
+
+    @include themify.themify($themes) {
+      color: themify.themed(variables.$text-color);
+    }
+
+    &:active {
+      color: variables.$color-orange;
+    }
+
+    &:hover {
+      text-decoration-style: wavy;
+      text-decoration-color: variables.$color-orange;
+    }
+  }
+
+  &__hire-me {
+    padding: 0.1rem 1.2rem;
+    position: relative;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-out;
+    z-index: 1;
+  
+    $themes : (light: (variables.$border: 1px solid rgba($color: variables.$color-black, $alpha: 0.6),
+        ),
+        dark: (variables.$border: 1px solid rgba($color: variables.$color-blue, $alpha: 1),
+        ));
+  
+    @include themify.themify($themes) {
+      border: themify.themed(variables.$border);
+    }
+  
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: variables.$color-blue, $alpha: 0.6);
+      border-radius: 0.5rem;
+      bottom: 0;
+      left: 10px;
+      top: 10px;
+      transition: all 0.3s ease-out;
+      right: 0;
+      z-index: -1;
+    }
+  
+    &:hover {
+      border: 1px solid rgba($color: variables.$color-black, $alpha: 0);
+      text-decoration-color: variables.$color-orange;
+      text-decoration-style: solid;
+  
+      &::after {
+        left: 0;
+        top: 0;
+      }
+    }
+  
+    &.active-nav-link {
+      border: 1px solid rgba($color: variables.$color-black, $alpha: 0);
+  
+      &::after {
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  .active-nav-link {
+    text-decoration-style: wavy;
+    text-decoration-color: variables.$color-orange;
+
+    $themes : (light: (variables.$text-color: variables.$color-orange,
+        ),
+        dark: (variables.$text-color: variables.$color-orange,
+        ));
+
+    @include themify.themify($themes) {
+      color: themify.themed(variables.$text-color);
+    }
+  }
+}

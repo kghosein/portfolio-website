@@ -1,0 +1,24 @@
+@use "./variables";
+@use "../layouts/themify";
+
+.outer-container {
+  width: auto;
+}
+
+.app {
+  $themes: (light: (variables.$background-color: variables.$color-white,
+    ),
+
+    dark: (variables.$background-color: variables.$color-black,
+    ));
+
+  @include themify.themify($themes) {
+    background-color: themify.themed(variables.$background-color);
+  }
+}
+
+.inner-container {
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}

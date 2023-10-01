@@ -1,0 +1,25 @@
+@use "./variables";
+@use "../layouts/themify";
+
+%headings {
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: 5px solid variables.$color-blue;
+  width: max-content;
+  padding: 0.4rem 1.5rem;
+  font-size: 1.8rem;
+  font-family: variables.$font-mono;
+  color: variables.$color-purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+
+  $themes : (light: (variables.$box-shadow: 20px 38px 34px -26px variables.$color-blue,
+      ),
+      dark: (variables.$box-shadow: 18px 18px 65px -26px variables.$color-blue,
+      ));
+
+  @include themify.themify($themes) {
+    box-shadow: themify.themed(variables.$box-shadow);
+  }
+}

@@ -1,0 +1,119 @@
+@use "../common/variables";
+@use "../common/common_styling";
+
+.resume {
+
+  &__main-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__download-resume {
+    @extend %common-a-style;
+    padding: 1rem 4rem;
+  }
+
+  &__view-mode {
+    margin-top: 8rem;
+
+    .page-heading {
+
+      svg {
+        transform: translateY(3px);
+      }
+    }
+
+    &__ctas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5rem;
+      border: 5px solid variables.$color-purple;
+      width: 35rem;
+      margin: 3rem auto 0 auto;
+
+      a {
+        color: variables.$color-blue;
+        font-size: 1.8rem;
+        font-family: variables.$font-mono;
+        cursor: pointer;
+        padding: 1.25rem;
+        border-radius: 5rem;
+        flex-basis: 50%;
+        text-decoration: none;
+        text-align: center;
+        // transition: all 0.5s;
+        // position: relative;
+        // overflow: hidden;
+
+        &:active {
+          color: variables.$color-orange;
+        }
+
+        // &::after {
+        //   content: "";
+        //   position: absolute;
+        //   background-color: rgba($color: variables.$color-blue, $alpha: 0.2);
+        //   width: 200%;
+        //   height: 200%;
+        //   transition: all 1.5s;
+        //   border-radius: 50%;
+        //   bottom: -6em;
+        //   right: -18em;
+        // }
+
+        &:hover {
+
+          // &::after {
+          //   right: 0;
+          //   left: -4em;
+          //   top: -1.5em;
+          // }
+        }
+
+        &.top {}
+
+        &.right {
+
+          // &:hover {
+
+          //   &::after {
+          //     bottom: -1.5em;
+          //     right: -5em;
+          //   }
+          // }
+        }
+
+        &.bottom {}
+
+        &.left {}
+
+        &.resume__view-mode__article-mode {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+
+          &::after {
+            content: none;
+          }
+        }
+
+        &.resume__view-mode__dev-mode {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+
+        &.active-mode {
+          background-color: rgba($color: variables.$color-blue, $alpha: 0.2);
+        }
+      }
+
+      &__separator {
+        display: inline-block;
+        width: 2px;
+        background-color: variables.$color-purple;
+        height: 2.75rem;
+      }
+    }
+  }
+}
