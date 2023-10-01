@@ -33,21 +33,18 @@ const SocialLink = ({ socialLink }) => {
   )
 }
 
-const SocialLinks = () => {
-
-  return (
-    <>
-      <SocialLink socialLink={githubLink} />
-      <SocialLink socialLink={twitterLink} />
-      <SocialLink socialLink={stackLink} />
-    </>
-  )
-}
+const SocialLinks = () => (
+  <>
+    <SocialLink socialLink={githubLink} />
+    <SocialLink socialLink={twitterLink} />
+    <SocialLink socialLink={stackLink} />
+  </>
+)
 
 const SocialLinksWithHOC = FlexHOC(SocialLinks)
 
 const About = () => {
-  
+
   return (
     <>
       <section className="about-section">

@@ -14,6 +14,15 @@ function reducer(state, action) {
   }
 }
 
+const Button = ({ mode, icon, dispatchMode }) => (
+  <button
+    type="button"
+    onClick={() => dispatchMode({ type: mode })}
+  >
+    {icon}
+  </button>
+)
+
 const ToggleMode = () => {
   const { dispatch } = useColorThemeContext()
   const [state, dispatchMode] = useReducer(reducer, {
@@ -42,19 +51,17 @@ const ToggleMode = () => {
       data-mode={state?.themeMode}
     >
       {state?.themeMode === "light" ?
-        <button
-          type="button"
-          onClick={() => dispatchMode({ type: "DARK" })}
-        >
-          <MoonIcon />
-        </button>
+        <Button
+          mode={"DARK"}
+          icon={<MoonIcon />}
+          dispatchMode={dispatchMode}
+        />
         :
-        <button
-          type="button"
-          onClick={() => dispatchMode({ type: "LIGHT" })}
-        >
-          <SunIcon />
-        </button>
+        <Button
+          mode={"LIGHT"}
+          icon={<SunIcon />}
+          dispatchMode={dispatchMode}
+        />
       }
     </div>
   )

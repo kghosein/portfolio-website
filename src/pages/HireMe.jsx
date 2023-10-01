@@ -27,16 +27,13 @@ const WorkLink = ({ myService }) => {
   )
 }
 
-const WorkLinks = () => {
-
-  return (
-    <>
-      <WorkLink myService={upwork} />
-      <WorkLink myService={fiverr} />
-      <WorkLink myService={email} />
-    </>
-  )
-}
+const WorkLinks = () => (
+  <>
+    <WorkLink myService={upwork} />
+    <WorkLink myService={fiverr} />
+    <WorkLink myService={email} />
+  </>
+)
 
 const WorkLinksWithHOC = FlexHOC(WorkLinks)
 

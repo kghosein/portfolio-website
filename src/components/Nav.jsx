@@ -2,24 +2,22 @@ import { NavLink } from "react-router-dom"
 import data from "../data/data.json"
 
 const Nav = () => {
-  
+
   return (
     <nav className="nav">
       <ul>
-        {data?.nav?.navLinks.map((el, i) => {
-          return (
-            <li
-              key={i}
+        {data?.nav?.navLinks.map((el, i) => (
+          <li
+            key={i}
+          >
+            <NavLink
+              to={el?.link}
+              className={({ isActive }) => (isActive ? "active-nav-link nav__link" : "nav__link")}
             >
-              <NavLink
-                to={el?.link}
-                className={({ isActive }) => (isActive ? "active-nav-link nav__link" : "nav__link")}
-              >
-                {el?.text}
-              </NavLink>
-            </li>
-          )
-        })}
+              {el?.text}
+            </NavLink>
+          </li>
+        ))}
         <li>
           <NavLink
             to={data?.nav?.hire?.link}

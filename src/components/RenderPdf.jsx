@@ -7,24 +7,21 @@ import SadEmoji from "./svgs/SadEmoji"
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`
 
-const MessageComponent = ({ icon = null, text }) => {
-
-  return (
-    <div className="render-pdf-custom-message">
-      <span>{text}</span>
-      {icon && icon}
-    </div>
-  )
-}
+const MessageComponent = ({ icon = null, text }) => (
+  <div className="render-pdf-custom-message">
+    <span>{text}</span>
+    {icon && icon}
+  </div>
+)
 
 const RenderPdf = () => {
   const [numPages, setNumPages] = useState(() => "")
   const [pageNumber, setPageNumber] = useState(() => 1)
-  const [showFooter, setShowFooter] = useState(() => false)
+  const [showControls, setShowControls] = useState(() => false)
 
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages)
-    setShowFooter(true)
+    setShowControls(true)
   }
 
   const goToPrevPage = () =>
@@ -34,7 +31,16 @@ const RenderPdf = () => {
     setPageNumber(pageNumber + 1 >= numPages ? numPages : pageNumber + 1)
 
   return (
-    <div className="render-pdf-document">
+    <>
+      {showControls && (
+        <div className="render-pdf-document__controls">
+          <div className="render-pdf-document__controls__inner">
+            <button onClick={goToPrevPage}>Prev</button>
+            <p>Page <span>{pageNumber}</span> of {numPages}</p>
+            <button onClick={goToNextPage}>Next</button>
+          </div>
+        </div>
+      )}
       <Document
         file={resume}
         onLoadSuccess={onDocumentLoadSuccess}
@@ -75,16 +81,7 @@ const RenderPdf = () => {
           }
         />
       </Document>
-      {showFooter && (
-        <footer className="render-pdf-document__footer">
-          <div className="render-pdf-document__footer__inner">
-            <button onClick={goToPrevPage}>Prev</button>
-            <p>Page <span>{pageNumber}</span> of {numPages}</p>
-            <button onClick={goToNextPage}>Next</button>
-          </div>
-        </footer>
-      )}
-    </div>
+    </>
   )
 }
 

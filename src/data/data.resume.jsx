@@ -18,6 +18,6 @@ export const downloadResume = {
 }
 
 export const viewModeTexts = {
-  "articleMode": "Article Mode",
-  "devMode": "Dev Mode"
+  "articleMode": "Article",
+  "accordionMode": "Accordion"
 }

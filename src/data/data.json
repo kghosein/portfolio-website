@@ -24,12 +24,28 @@
       },
       {
         "text": "Resume",
-        "link": "resume"
+        "link": "resume?articleMode=true"
       }
     ],
     "hire": {
-      "link": "hire-me",
-      "text": "Hire Me!"
+      "text": "Hire Me!",
+      "link": "hire-me"
     }
+  },
+  "resume": {
+    "accordionMode": [
+      {
+        "header": "<span>&#128161;</span> Skills",
+        "content": "skills"
+      },
+      {
+        "header": "<span>&#129534;</span> Education",
+        "content": "education"
+      },
+      {
+        "header": "<span>&#127775;</span> Experience",
+        "content": "experience"
+      }
+    ]
   }
 }

@@ -26,11 +26,11 @@
     }
   }
 
-  &__footer {
+  &__controls {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
 
     &__inner {
       display: flex;
@@ -41,49 +41,44 @@
       font-weight: 400;
 
       p {
-        $themes: (
-          light: (variables.$text-color: variables.$color-black),
-          dark: (variables.$text-color: variables.$color-white)
-        );
+        $themes: (light: (variables.$text-color: variables.$color-black),
+            dark: (variables.$text-color: variables.$color-white));
 
-      @include themify.themify($themes) {
-        color: themify.themed(variables.$text-color);
+        @include themify.themify($themes) {
+          color: themify.themed(variables.$text-color);
+        }
+
+        width: 5.5rem;
+        text-align: center;
+
+        span {
+          color: variables.$color-orange;
+        }
       }
 
-      width: 5.5rem;
-      text-align: center;
+      button {
+        background: transparent;
+        border-radius: 0.5rem;
+        padding: 0.375rem;
+        cursor: pointer;
+        height: 1.75rem;
+        line-height: 1;
 
-      span {
-        color: variables.$color-orange;
-      }
-    }
+        $themes: (light: (variables.$text-color: variables.$color-black,
+              variables.$border: 1px solid variables.$color-black),
+            dark: (variables.$text-color: variables.$color-white,
+              variables.$border: 1px solid variables.$color-white));
 
-    button {
-      background: transparent;
-      border-radius: 0.5rem;
-      padding: 0.375rem 0.5rem;
-      cursor: pointer;
-      line-height: 1.2;
+        @include themify.themify($themes) {
+          color: themify.themed(variables.$text-color);
+          border: themify.themed(variables.$border);
+        }
 
-      $themes: (
-          light: (variables.$text-color: variables.$color-black,
-          variables.$border: 1px solid variables.$color-black
-          ),
-          dark: (variables.$text-color: variables.$color-white,
-          variables.$border: 1px solid variables.$color-white
-          )
-        );
-
-      @include themify.themify($themes) {
-        color: themify.themed(variables.$text-color);
-        border: themify.themed(variables.$border);
-      }
-
-      &:hover,
-      &:active {
-        color: variables.$color-orange;
+        &:hover,
+        &:active {
+          color: variables.$color-orange;
+        }
       }
     }
   }
-}
 }

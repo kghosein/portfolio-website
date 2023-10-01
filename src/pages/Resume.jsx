@@ -4,14 +4,15 @@ import { downloadResume, pageHeading, viewModeTexts, viewResumeMode } from "../d
 import RenderPdf from "../components/RenderPdf"
 import ViewModeCta from "../components/ViewResumeModeCta"
 import { useSearchParams } from "react-router-dom"
+import AccordionMode from "../components/AccordionMode"
 
 const setArticleMode = "/resume?articleMode=true"
-const setDevMode = "/resume?devMode=true"
+const setAccordionMode = "/resume?accordionMode=true"
 
 const Resume = () => {
   const [searchParams] = useSearchParams()
   const articleMode = searchParams.get("articleMode")
-  const devMode = searchParams.get("devMode")
+  const accordionMode = searchParams.get("accordionMode")
 
   return (
     <>
@@ -36,21 +37,21 @@ const Resume = () => {
           />
           <span className="resume__view-mode__ctas__separator" />
           <ViewModeCta
-            text={viewModeTexts?.devMode}
-            cssClass={"resume__view-mode__dev-mode"}
-            action={setDevMode}
-            mode={devMode}
+            text={viewModeTexts?.accordionMode}
+            cssClass={"resume__view-mode__accordion-mode"}
+            action={setAccordionMode}
+            mode={accordionMode}
           />
         </div>
       </section>
       {articleMode && (
-        <section>
+        <section className="render-pdf-document">
           <RenderPdf />
         </section>
       )}
-      {devMode && (
-        <section>
-          "dev mode"
+      {accordionMode && (
+        <section className="accordion-mode">
+          <AccordionMode />
         </section>
       )}
     </>
