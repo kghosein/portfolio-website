@@ -1,10 +1,16 @@
 import Headings from "../components/Headings"
 import { MainHOC } from "../templates/HOC"
-import { downloadResume, pageHeading, viewModeTexts, viewResumeMode } from "../data/data.resume"
+import {
+  downloadResume,
+  pageHeading,
+  viewModeTexts,
+  viewResumeMode,
+} from "../data/data.resume"
 import RenderPdf from "../components/RenderPdf"
 import ViewModeCta from "../components/ViewResumeModeCta"
 import { useSearchParams } from "react-router-dom"
 import AccordionMode from "../components/AccordionMode"
+import { useState } from "react"
 
 const setArticleMode = "/resume?articleMode=true"
 const setAccordionMode = "/resume?accordionMode=true"
@@ -13,6 +19,7 @@ const Resume = () => {
   const [searchParams] = useSearchParams()
   const articleMode = searchParams.get("articleMode")
   const accordionMode = searchParams.get("accordionMode")
+  const [isHover, setIsHover] = useState(() => "")
 
   return (
     <>
@@ -34,13 +41,18 @@ const Resume = () => {
             cssClass={"resume__view-mode__article-mode"}
             action={setArticleMode}
             mode={articleMode}
+            setIsHover={setIsHover}
           />
-          <span className="resume__view-mode__ctas__separator" />
+          <span>
+            <span className={isHover ? `bar-1 ${isHover}` : "bar-1"} />
+            <span className={isHover ? `bar-2 ${isHover}` : "bar-2"} />
+          </span>
           <ViewModeCta
             text={viewModeTexts?.accordionMode}
             cssClass={"resume__view-mode__accordion-mode"}
             action={setAccordionMode}
             mode={accordionMode}
+            setIsHover={setIsHover}
           />
         </div>
       </section>

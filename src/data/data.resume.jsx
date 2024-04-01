@@ -1,5 +1,5 @@
 import ResumeIcon from "../components/svgs/ResumeIcon"
-import resumePdf from "/docs/khalaf-hosein-resume.pdf"
+import resumePdf from "/docs/khalaf-hosein-cv.pdf"
 import EyesIcons from "../components/svgs/EyesIcons"
 
 export const pageHeading = {
@@ -18,6 +18,6 @@ export const downloadResume = {
 }
 
 export const viewModeTexts = {
-  "articleMode": "Article",
-  "accordionMode": "Accordion"
+  "articleMode": "article",
+  "accordionMode": "accordion"
 }

@@ -1,9 +1,8 @@
 import {
   pageHeading,
   upwork,
-  fiverr,
   email,
-  description
+  description,
 } from "../data/data.hire"
 import Headings from "../components/Headings"
 import { FlexHOC, MainHOC } from "../templates/HOC"
@@ -11,8 +10,8 @@ import ExternalLink from "../components/ExternalLink"
 
 const WorkLink = ({ myService }) => {
   const link = {
-    "href": myService?.href,
-    "text": myService?.text
+    href: myService?.href,
+    text: myService?.text,
   }
 
   return (
@@ -30,23 +29,20 @@ const WorkLink = ({ myService }) => {
 const WorkLinks = () => (
   <>
     <WorkLink myService={upwork} />
-    <WorkLink myService={fiverr} />
     <WorkLink myService={email} />
   </>
 )
 
 const WorkLinksWithHOC = FlexHOC(WorkLinks)
 
-const HireMe = () => {
-  return (
-    <div className="hire-me">
-      <Headings pageHeading={pageHeading} />
-      <section className="work-links">
-        <p className="hire-me__description">{description?.description}</p>
-        <WorkLinksWithHOC />
-      </section>
-    </div>
-  )
-}
+const HireMe = () => (
+  <div className="hire-me">
+    <Headings pageHeading={pageHeading} />
+    <section className="work-links">
+      <p className="hire-me__description">{description?.description}</p>
+      <WorkLinksWithHOC />
+    </section>
+  </div>
+)
 
 export default MainHOC(HireMe, pageHeading)

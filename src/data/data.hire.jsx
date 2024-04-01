@@ -11,12 +11,6 @@ export const upwork = {
   "description": "most preferred*"
 }
 
-export const fiverr = {
-  "href": "https://www.fiverr.com/kghussein",
-  "text": "Fiverr",
-  "description": "drop a message"
-}
-
 export const email = {
   "href": "mailto:userfirst9@gmail.com",
   "text": "Email",

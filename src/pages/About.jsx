@@ -5,10 +5,11 @@ import {
   projectHeading,
   socialLinksHeading,
   githubExternalLink,
-  githubLink,
-  twitterLink,
-  stackLink,
-  bio
+  github,
+  twitter,
+  stackOverFlow,
+  bio,
+  linkedIn,
 } from "../data/data.about"
 import ExternalLink from "../components/ExternalLink"
 import ExternalLinkIcon from "../components/svgs/ExternalLinkIcon"
@@ -16,7 +17,7 @@ import { FlexHOC, MainHOC } from "../templates/HOC"
 
 const SocialLink = ({ socialLink }) => {
   const link = {
-    "href": socialLink?.href
+    href: socialLink?.href,
   }
 
   return (
@@ -35,41 +36,43 @@ const SocialLink = ({ socialLink }) => {
 
 const SocialLinks = () => (
   <>
-    <SocialLink socialLink={githubLink} />
-    <SocialLink socialLink={twitterLink} />
-    <SocialLink socialLink={stackLink} />
+    <SocialLink socialLink={github} />
+    <SocialLink socialLink={twitter} />
+    <SocialLink socialLink={stackOverFlow} />
+    <SocialLink socialLink={linkedIn} />
   </>
 )
 
 const SocialLinksWithHOC = FlexHOC(SocialLinks)
 
-const About = () => {
-
-  return (
-    <>
-      <section className="about-section">
-        <Headings pageHeading={pageHeading} />
-        <div className="hero-section">
-          <div className="hero-section__image">
-            <img src={myImage} alt="author" />
-          </div>
-          <article className="hero-section__description">
-            <p>{bio?.bio}</p>
-          </article>
+const About = () => (
+  <>
+    <section className="about-section">
+      <Headings pageHeading={pageHeading} />
+      <div className="hero-section">
+        <div className="hero-section__image">
+          <img src={myImage} alt="author" />
         </div>
-      </section>
-      <section className="projects-section">
-        <Headings pageHeading={projectHeading} />
-        <div className="projects-section__description">
-          <p>For projects please refer to my <ExternalLink link={githubExternalLink} icon={<ExternalLinkIcon />} />profile.</p>
-        </div>
-      </section>
-      <section className="social-links">
-        <Headings pageHeading={socialLinksHeading} />
-        <SocialLinksWithHOC />
-      </section>
-    </>
-  )
-}
+        <article className="hero-section__description">
+          <p>{bio?.bio}</p>
+        </article>
+      </div>
+    </section>
+    <section className="projects-section">
+      <Headings pageHeading={projectHeading} />
+      <div className="projects-section__description">
+        <p>
+          For projects please refer to my{" "}
+          <ExternalLink link={githubExternalLink} icon={<ExternalLinkIcon />} />
+          profile.
+        </p>
+      </div>
+    </section>
+    <section className="social-links">
+      <Headings pageHeading={socialLinksHeading} />
+      <SocialLinksWithHOC />
+    </section>
+  </>
+)
 
 export default MainHOC(About, pageHeading)

@@ -1,8 +1,25 @@
 @use "../common/variables";
 @use "../common/common_styling";
 
-.resume {
+%common {
+  $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
+  $duration: 0.5s;
+  content: "";
+  background: variables.$color-purple;
+  width: 0.125rem;
+  height: 1.375rem;
+  display: block;
+  transition: all $duration $easing;
+}
 
+@mixin after($rotate, $translate) {
+  &:after {
+    transform-origin: center center;
+    transform: rotate($rotate) translateX($translate);
+  }
+}
+
+.resume {
   &__main-heading {
     display: flex;
     align-items: center;
@@ -18,7 +35,6 @@
     margin-top: 8rem;
 
     .page-heading {
-
       svg {
         transform: translateY(3px);
       }
@@ -33,7 +49,7 @@
       width: 35rem;
       margin: 3rem auto 0 auto;
 
-      a {
+      button {
         color: variables.$color-blue;
         font-size: 1.8rem;
         font-family: variables.$font-mono;
@@ -43,59 +59,22 @@
         flex-basis: 50%;
         text-decoration: none;
         text-align: center;
-        // transition: all 0.5s;
-        // position: relative;
-        // overflow: hidden;
+        text-transform: capitalize;
+        border: 0;
+        background: transparent;
+        user-select: none;
 
         &:active {
           color: variables.$color-orange;
         }
 
-        // &::after {
-        //   content: "";
-        //   position: absolute;
-        //   background-color: rgba($color: variables.$color-blue, $alpha: 0.2);
-        //   width: 200%;
-        //   height: 200%;
-        //   transition: all 1.5s;
-        //   border-radius: 50%;
-        //   bottom: -6em;
-        //   right: -18em;
-        // }
-
-        &:hover {
-
-          // &::after {
-          //   right: 0;
-          //   left: -4em;
-          //   top: -1.5em;
-          // }
+        &:disabled {
+          pointer-events: none;
         }
-
-        &.top {}
-
-        &.right {
-
-          // &:hover {
-
-          //   &::after {
-          //     bottom: -1.5em;
-          //     right: -5em;
-          //   }
-          // }
-        }
-
-        &.bottom {}
-
-        &.left {}
 
         &.resume__view-mode__article-mode {
           border-top-right-radius: 0;
           border-bottom-right-radius: 0;
-
-          &::after {
-            content: none;
-          }
         }
 
         &.resume__view-mode__accordion-mode {
@@ -108,11 +87,36 @@
         }
       }
 
-      &__separator {
-        display: inline-block;
-        width: 2px;
-        background-color: variables.$color-purple;
-        height: 2.75rem;
+      .bar-1 {
+        position: relative;
+
+        &:after {
+          @extend %common;
+        }
+
+        &.accordion {
+          @include after(-30deg, -3px);
+        }
+
+        &.article {
+          @include after(30deg, 3px);
+        }
+      }
+
+      .bar-2 {
+        position: relative;
+
+        &:after {
+          @extend %common;
+        }
+
+        &.accordion {
+          @include after(30deg, -3px);
+        }
+
+        &.article {
+          @include after(-30deg, 3px);
+        }
       }
     }
   }

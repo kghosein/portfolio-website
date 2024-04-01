@@ -7,6 +7,7 @@ import AboutIcon from "../components/svgs/AboutIcon"
 import blob01 from "../assets/blob-01.svg"
 import blob02 from "../assets/blob-02.svg"
 import blob03 from "../assets/blob-03.svg"
+import LinkedInIcon from "../components/svgs/LinkedInIcon"
 
 export const pageHeading = {
   "text": "About My Self",
@@ -28,22 +29,28 @@ export const githubExternalLink = {
   "text": "Github"
 }
 
-export const githubLink = {
+export const github = {
   "href": "https://github.com/kghosein",
   "icon": <GithubIcon />,
   "bgBlob": blob01
 }
 
-export const twitterLink = {
+export const twitter = {
   "href": "https://twitter.com/hosein_kg",
   "icon": <TwitterIcon />,
   "bgBlob": blob02
 }
 
-export const stackLink = {
+export const stackOverFlow = {
   "href": "https://stackoverflow.com/users/14148548/first",
   "icon": <StackOverflowIcon />,
   "bgBlob": blob03
+}
+
+export const linkedIn = {
+  "href": "https://www.linkedin.com/in/khalaf-hosein-39807521b/",
+  "icon": <LinkedInIcon />,
+  "bgBlob": blob01
 }
 
 export const bio = {
