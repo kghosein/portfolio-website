@@ -1,4 +1,7 @@
 {
+  "header": {
+    "title": "Khalaf Hosein"
+  },
   "footer": {
     "react": {
       "href": "https://react.dev/",
@@ -12,9 +15,6 @@
       "href": "#",
       "text": "Github"
     }
-  },
-  "header": {
-    "title": "Khalaf Hosein"
   },
   "nav": {
     "navLinks": [
@@ -30,6 +30,61 @@
     "hire": {
       "text": "Hire Me!",
       "link": "hire-me"
+    }
+  },
+  "about": {
+    "section1": {
+      "heading": "About My Self",
+      "bio": "Mainly a front-end developer and constantly expanding my knowledge in the backend as well, knowledgeable in all the latest technologies in the JavaScript stack and other web technologies. Always eager to learn and explore new technologies, programming and problem solving drives me to continuously improve my skills and stay up-to-date with industry trends. With my expertise and enthusiasm for technology, I am confident in delivering high-quality and innovative solutions for any project I work on. Happy coding!"
+    },
+    "section2": {
+      "heading": "Projects"
+    },
+    "section3": {
+      "heading": "Social Links"
+    },
+    "links": {
+      "github": {
+        "href": "https://github.com/kghosein",
+        "text": "Github"
+      },
+      "twitter": "https://twitter.com/hosein_kg",
+      "stackOverFlow": "https://stackoverflow.com/users/14148548/first",
+      "linkedIn": "https://www.linkedin.com/in/khalaf-hosein-39807521b/"
+    }
+  },
+  "resume": {
+    "section1": {
+      "heading": "Resume",
+      "downloadResume": "Download PDF"
+    },
+    "section2": {
+      "heading": "View Mode",
+      "viewMode": {
+        "article": "article",
+        "accordion": "accordion"
+      },
+      "markdownFiles": [
+        "/markdown/skills.md",
+        "/markdown/education.md",
+        "/markdown/experience.md"
+      ]
+    }
+  },
+  "hire": {
+    "heading": "Hire Me!",
+    "description": "You can hire my services through the following platforms.",
+    "services": {
+      "upwork": {
+        "href": "https://www.upwork.com/freelancers/~0143e3115b353216f4",
+        "text": "Upwork",
+        "description": "most preferred*"
+      },
+      "email": {
+        "href": "mailto:userfirst9@gmail.com",
+        "text": "Email",
+        "description": "or send me an email"
+      }
     }
   }
 }

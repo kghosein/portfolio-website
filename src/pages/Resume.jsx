@@ -3,7 +3,6 @@ import { MainHOC } from "../templates/HOC"
 import {
   downloadResume,
   pageHeading,
-  viewModeTexts,
   viewResumeMode,
 } from "../data/data.resume"
 import RenderPdf from "../components/RenderPdf"
@@ -11,6 +10,7 @@ import ViewModeCta from "../components/ViewResumeModeCta"
 import { useSearchParams } from "react-router-dom"
 import AccordionMode from "../components/AccordionMode"
 import { useState } from "react"
+import data from "../data/data.json"
 
 const setArticleMode = "/resume?articleMode=true"
 const setAccordionMode = "/resume?accordionMode=true"
@@ -37,7 +37,7 @@ const Resume = () => {
         <Headings pageHeading={viewResumeMode} />
         <div className="resume__view-mode__ctas">
           <ViewModeCta
-            text={viewModeTexts?.articleMode}
+            text={data.resume.section2.viewMode.article}
             cssClass={"resume__view-mode__article-mode"}
             action={setArticleMode}
             mode={articleMode}
@@ -48,7 +48,7 @@ const Resume = () => {
             <span className={isHover ? `bar-2 ${isHover}` : "bar-2"} />
           </span>
           <ViewModeCta
-            text={viewModeTexts?.accordionMode}
+            text={data.resume.section2.viewMode.accordion}
             cssClass={"resume__view-mode__accordion-mode"}
             action={setAccordionMode}
             mode={accordionMode}

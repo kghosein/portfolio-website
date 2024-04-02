@@ -1,23 +1,19 @@
 import ResumeIcon from "../components/svgs/ResumeIcon"
 import resumePdf from "/docs/khalaf-hosein-cv.pdf"
 import EyesIcons from "../components/svgs/EyesIcons"
+import data from "./data.json"
 
 export const pageHeading = {
-  "text": "Resume",
+  "text": data.resume.section1.heading,
   "icon": <ResumeIcon />
 }
 
 export const viewResumeMode = {
-  "text": "View Mode",
+  "text": data.resume.section2.heading,
   "icon": <EyesIcons />
 }
 
 export const downloadResume = {
-  "text": "Download PDF",
+  "text": data.resume.section1.downloadResume,
   "docs": resumePdf
-}
-
-export const viewModeTexts = {
-  "articleMode": "article",
-  "accordionMode": "accordion"
 }

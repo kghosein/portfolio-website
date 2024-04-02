@@ -1,12 +1,8 @@
-import {
-  pageHeading,
-  upwork,
-  email,
-  description,
-} from "../data/data.hire"
+import { pageHeading } from "../data/data.hire"
 import Headings from "../components/Headings"
 import { FlexHOC, MainHOC } from "../templates/HOC"
 import ExternalLink from "../components/ExternalLink"
+import data from "../data/data.json"
 
 const WorkLink = ({ myService }) => {
   const link = {
@@ -28,8 +24,8 @@ const WorkLink = ({ myService }) => {
 
 const WorkLinks = () => (
   <>
-    <WorkLink myService={upwork} />
-    <WorkLink myService={email} />
+    <WorkLink myService={data.hire.services.upwork} />
+    <WorkLink myService={data.hire.services.email} />
   </>
 )
 
@@ -39,7 +35,7 @@ const HireMe = () => (
   <div className="hire-me">
     <Headings pageHeading={pageHeading} />
     <section className="work-links">
-      <p className="hire-me__description">{description?.description}</p>
+      <p className="hire-me__description">{data.hire.description}</p>
       <WorkLinksWithHOC />
     </section>
   </div>

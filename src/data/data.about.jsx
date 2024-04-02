@@ -8,51 +8,43 @@ import blob01 from "../assets/blob-01.svg"
 import blob02 from "../assets/blob-02.svg"
 import blob03 from "../assets/blob-03.svg"
 import LinkedInIcon from "../components/svgs/LinkedInIcon"
+import data from "./data.json"
 
 export const pageHeading = {
-  "text": "About My Self",
+  "text": data.about.section1.heading,
   "icon": <AboutIcon />
 }
 
 export const projectHeading = {
-  "text": "Projects",
+  "text": data.about.section2.heading,
   "icon": <Projects />
 }
 
 export const socialLinksHeading = {
-  "text": "Social Links",
+  "text": data.about.section3.heading,
   "icon": <SocialLinks />
 }
 
-export const githubExternalLink = {
-  "href": "https://github.com/kghosein",
-  "text": "Github"
-}
-
 export const github = {
-  "href": "https://github.com/kghosein",
+  "href": data.about.links.github.href,
   "icon": <GithubIcon />,
   "bgBlob": blob01
 }
 
 export const twitter = {
-  "href": "https://twitter.com/hosein_kg",
+  "href": data.about.links.twitter,
   "icon": <TwitterIcon />,
   "bgBlob": blob02
 }
 
 export const stackOverFlow = {
-  "href": "https://stackoverflow.com/users/14148548/first",
+  "href": data.about.links.stackOverFlow,
   "icon": <StackOverflowIcon />,
   "bgBlob": blob03
 }
 
 export const linkedIn = {
-  "href": "https://www.linkedin.com/in/khalaf-hosein-39807521b/",
+  "href": data.about.links.linkedIn,
   "icon": <LinkedInIcon />,
   "bgBlob": blob01
-}
-
-export const bio = {
-  "bio": "Mainly a front-end developer and constantly expanding my knowledge in the backend as well, knowledgeable in all the latest technologies in the JavaScript stack and other web technologies. Always eager to learn and explore new technologies, programming and problem solving drives me to continuously improve my skills and stay up-to-date with industry trends. With my expertise and enthusiasm for technology, I am confident in delivering high-quality and innovative solutions for any project I work on. Happy coding!"
 }

@@ -2,8 +2,8 @@ const SocialLinks = () => (
   <svg
     fill="#9d4edd"
     xmlns="http://www.w3.org/2000/svg"
-    width={50}
-    height={50}
+    width={46}
+    height={46}
     viewBox="0 0 383.028 383.027"
     xmlSpace="preserve"
     stroke="#9d4edd"

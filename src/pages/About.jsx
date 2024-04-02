@@ -4,16 +4,15 @@ import {
   pageHeading,
   projectHeading,
   socialLinksHeading,
-  githubExternalLink,
   github,
   twitter,
   stackOverFlow,
-  bio,
   linkedIn,
 } from "../data/data.about"
 import ExternalLink from "../components/ExternalLink"
 import ExternalLinkIcon from "../components/svgs/ExternalLinkIcon"
 import { FlexHOC, MainHOC } from "../templates/HOC"
+import data from "../data/data.json"
 
 const SocialLink = ({ socialLink }) => {
   const link = {
@@ -54,7 +53,7 @@ const About = () => (
           <img src={myImage} alt="author" />
         </div>
         <article className="hero-section__description">
-          <p>{bio?.bio}</p>
+          <p>{data.about.section1.bio}</p>
         </article>
       </div>
     </section>
@@ -63,7 +62,7 @@ const About = () => (
       <div className="projects-section__description">
         <p>
           For projects please refer to my{" "}
-          <ExternalLink link={githubExternalLink} icon={<ExternalLinkIcon />} />
+          <ExternalLink link={data.about.links.github} icon={<ExternalLinkIcon />} />
           profile.
         </p>
       </div>

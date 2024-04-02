@@ -1,21 +1,79 @@
 @use "../common/variables";
+@use "../layouts/themify";
 
 .accordion-mode {
   max-width: 800px;
   margin: 3rem auto 0 auto;
   min-height: 500px;
+  display: flex;
+  flex-direction: column;
 
   &__el {
-    box-shadow: rgba($color: variables.$color-black, $alpha: 0.1) 0px 1px 3px 0px, rgba($color: variables.$color-black, $alpha: 0.06) 0px 1px 2px 0px;
-    background-color: variables.$color-white;
     font-family: variables.$font-mukta;
     margin-bottom: 1rem;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
 
-		&[data-is-content=true] {
-			box-shadow: rgba($color: variables.$color-black, $alpha: 0.1) 0px 4px 12px;
-		}
+    $themes: (
+      light: (
+        variables.$background-color: variables.$color-white,
+        variables.$box-shadow: (
+          rgba(
+              $color: variables.$color-black,
+              $alpha: 0.1,
+            )
+            0px 1px 3px 0px,
+          rgba(
+              $color: variables.$color-black,
+              $alpha: 0.06,
+            )
+            0px 1px 2px 0px,
+        ),
+      ),
+      dark: (
+        variables.$background-color: variables.$color-black,
+        variables.$border: 3px solid variables.$color-orange,
+        variables.$box-shadow: (
+          rgba(
+              $color: variables.$color-blue,
+              $alpha: 0.1,
+            )
+            0px 5px 7px 0px,
+          rgba(
+              $color: variables.$color-blue,
+              $alpha: 0.06,
+            )
+            0px 5px 6px 0px,
+        ),
+      ),
+    );
+
+    @include themify.themify($themes) {
+      background: themify.themed(variables.$background-color);
+      border: themify.themed(variables.$border);
+      box-shadow: themify.themed(variables.$box-shadow);
+    }
+
+    &[data-is-content="true"] {
+      $themes: (
+        light: (
+          variables.$box-shadow:
+            rgba(
+              $color: variables.$color-black,
+              $alpha: 0.1,
+            )
+            0px 4px 12px,
+        ),
+        dark: (
+          variables.$border: 3px dashed variables.$color-orange,
+        ),
+      );
+
+      @include themify.themify($themes) {
+        box-shadow: themify.themed(variables.$box-shadow);
+        border: themify.themed(variables.$border);
+      }
+    }
 
     &__header {
       padding: 1rem 2rem 1rem 2rem;
@@ -39,21 +97,19 @@
         color: variables.$color-orange;
       }
 
-			&[data-is-content=true] {
-				
-				button {
-					transform: rotate(180deg);
-					transition: all 0.2s;
-				}
-			}
+      &[data-is-content="true"] {
+        button {
+          transform: rotate(180deg);
+          transition: all 0.2s;
+        }
+      }
 
-			&[data-is-content=false] {
-				
-				button {
-					transform: rotate(0deg);
-					transition: all 0.2s;
-				}
-			}
+      &[data-is-content="false"] {
+        button {
+          transform: rotate(0deg);
+          transition: all 0.2s;
+        }
+      }
     }
 
     &__content {
@@ -61,9 +117,86 @@
       margin: 0 2rem;
       border-top: 2px solid rgba($color: variables.$color-orange, $alpha: 0.5);
 
-      p {
+      h4 {
+        font-size: 1.23rem;
+        font-weight: 500;
+        margin-top: 0.6rem;
+        $themes: (
+          light: (
+            variables.$text-color: variables.$color-black,
+          ),
+          dark: (
+            variables.$text-color: variables.$color-white,
+          ),
+        );
+
+        @include themify.themify($themes) {
+          color: themify.themed(variables.$text-color);
+        }
+      }
+
+      ul {
+        margin-left: 2rem;
+      }
+
+      strong {
+        color: variables.$color-orange;
+      }
+
+      p,
+      li {
         font-weight: 400;
-        font-size: 1.25rem;
+        font-size: 1.06rem;
+        $themes: (
+          light: (
+            variables.$text-color:
+              rgba(
+                $color: variables.$color-black,
+                $alpha: 0.85,
+              ),
+          ),
+          dark: (
+            variables.$text-color:
+              rgba(
+                $color: variables.$color-white,
+                $alpha: 0.9,
+              ),
+          ),
+        );
+
+        @include themify.themify($themes) {
+          color: themify.themed(variables.$text-color);
+        }
+
+        em {
+          $themes: (
+            light: (
+              variables.$text-color:
+                rgba(
+                  $color: variables.$color-black,
+                  $alpha: 0.6,
+                ),
+            ),
+            dark: (
+              variables.$text-color:
+                rgba(
+                  $color: variables.$color-white,
+                  $alpha: 0.8,
+                ),
+            ),
+          );
+
+          @include themify.themify($themes) {
+            color: themify.themed(variables.$text-color);
+          }
+        }
+      }
+
+      p {
+        em {
+          font-style: normal;
+          font-size: 0.97rem;
+        }
       }
     }
   }
