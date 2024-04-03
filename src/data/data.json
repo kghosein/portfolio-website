@@ -7,12 +7,12 @@
       "href": "https://react.dev/",
       "text": "React"
     },
-    "netlify": {
-      "href": "https://www.netlify.com/",
-      "text": "Netlify"
+    "hosting": {
+      "href": "https://firebase.google.com/",
+      "text": "Firebase"
     },
     "repoLink": {
-      "href": "#",
+      "href": "https://github.com/kghosein/portfolio-website",
       "text": "Github"
     }
   },

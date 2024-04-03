@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="inner-container">
       <footer className="footer">
         <p>
-          <span>&#169;</span> {currentYear} | Site built with <ExternalLink link={data?.footer?.react} />, hosted on <ExternalLink link={data?.footer?.netlify} />, open source on <ExternalLink link={data?.footer?.repoLink} />.
+          <span>&#169;</span> {currentYear} | Site built with <ExternalLink link={data?.footer?.react} />, hosted on <ExternalLink link={data?.footer?.hosting} />, open source on <ExternalLink link={data?.footer?.repoLink} />.
         </p>
       </footer>
     </div>
