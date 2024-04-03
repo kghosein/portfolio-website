@@ -7,6 +7,7 @@ import AboutIcon from "../components/svgs/AboutIcon"
 import blob01 from "../assets/blob-01.svg"
 import blob02 from "../assets/blob-02.svg"
 import blob03 from "../assets/blob-03.svg"
+import blob04 from "../assets/blob-04.svg"
 import LinkedInIcon from "../components/svgs/LinkedInIcon"
 import data from "./data.json"
 
@@ -46,5 +47,5 @@ export const stackOverFlow = {
 export const linkedIn = {
   "href": data.about.links.linkedIn,
   "icon": <LinkedInIcon />,
-  "bgBlob": blob01
+  "bgBlob": blob04
 }
