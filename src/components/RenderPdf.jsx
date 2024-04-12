@@ -4,6 +4,7 @@ import resume from "/docs/khalaf-hosein-cv.pdf"
 import "react-pdf/dist/esm/Page/AnnotationLayer.css"
 import "react-pdf/dist/esm/Page/TextLayer.css"
 import SadEmoji from "./svgs/SadEmoji"
+import { useWindowSize } from "@react-hookz/web"
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`
 
@@ -18,6 +19,7 @@ const RenderPdf = () => {
   const [numPages, setNumPages] = useState(() => "")
   const [pageNumber, setPageNumber] = useState(() => 1)
   const [showControls, setShowControls] = useState(() => false)
+  const { width: windowWidth } = useWindowSize()
 
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages)
@@ -36,7 +38,9 @@ const RenderPdf = () => {
         <div className="render-pdf-document__controls">
           <div className="render-pdf-document__controls__inner">
             <button onClick={goToPrevPage}>Prev</button>
-            <p>Page <span>{pageNumber}</span> of {numPages}</p>
+            <p>
+              Page <span>{pageNumber}</span> of {numPages}
+            </p>
             <button onClick={goToNextPage}>Next</button>
           </div>
         </div>
@@ -45,21 +49,10 @@ const RenderPdf = () => {
         file={resume}
         onLoadSuccess={onDocumentLoadSuccess}
         error={
-          <MessageComponent
-            icon={<SadEmoji />}
-            text={"Failed to load PDF."}
-          />
+          <MessageComponent icon={<SadEmoji />} text={"Failed to load PDF."} />
         }
-        loading={
-          <MessageComponent
-            text={"Loading PDF..."}
-          />
-        }
-        noData={
-          <MessageComponent
-            text={"No PDF file specified."}
-          />
-        }
+        loading={<MessageComponent text={"Loading PDF..."} />}
+        noData={<MessageComponent text={"No PDF file specified."} />}
       >
         <Page
           pageNumber={pageNumber}
@@ -69,16 +62,9 @@ const RenderPdf = () => {
               text={"Failed to load the page."}
             />
           }
-          loading={
-            <MessageComponent
-              text={"Loading page..."}
-            />
-          }
-          noData={
-            <MessageComponent
-              text={"No page specified."}
-            />
-          }
+          loading={<MessageComponent text={"Loading page..."} />}
+          noData={<MessageComponent text={"No page specified."} />}
+          scale={windowWidth <= 767 ? (windowWidth < 425 ? 0.4 : 0.6) : 1.1}
         />
       </Document>
     </>

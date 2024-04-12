@@ -1,14 +1,21 @@
 @use "../common/variables";
+@use "../layouts/break_points";
+@use "../common/common_styling";
 
 .toggle-mode-buttons {
   width: 4rem;
   height: 4rem;
   display: flex;
 
+  @include break_points.px767 {
+    width: 3rem;
+    height: 3rem;
+  }
+
   button {
     border: 0;
     background: transparent;
-    cursor: pointer;
+    @extend %cursor-pointer;
   }
 
   &[data-mode="dark"] {

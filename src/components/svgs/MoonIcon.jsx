@@ -1,7 +1,7 @@
-const MoonIcon = () => (
+const MoonIcon = (props) => (
   <svg
-    width={64}
-    height={64}
+    width={props?.width ? props?.width : 64}
+    height={props?.height ? props?.height : 64}
     viewBox="0 0 1024 1024"
     className="icon"
     xmlns="http://www.w3.org/2000/svg"

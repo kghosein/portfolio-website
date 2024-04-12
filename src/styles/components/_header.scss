@@ -4,21 +4,17 @@
 
 .header-container {
   padding: 1rem 0 3rem 0;
+
+  @include break_points.px767 {
+    padding: 1rem 0 2rem 0;
+  }
 }
 
 .header {
-
   &__header-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    @include break_points.mobile {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2rem;
-      justify-content: unset;
-    }
   }
 
   &__title {
@@ -29,10 +25,18 @@
     letter-spacing: 3px;
     z-index: 1;
 
-    $themes : (light: (variables.$text-color: variables.$color-black,
-        ),
-        dark: (variables.$text-color: variables.$color-white,
-        ));
+    @include break_points.px1024 {
+      font-size: 3.2rem;
+    }
+
+    $themes: (
+      light: (
+        variables.$text-color: variables.$color-black,
+      ),
+      dark: (
+        variables.$text-color: variables.$color-white,
+      ),
+    );
 
     @include themify.themify($themes) {
       color: themify.themed(variables.$text-color);
@@ -58,12 +62,5 @@
       background-color: variables.$color-blue;
       z-index: -1;
     }
-  }
-
-  &__mbl-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
   }
 }

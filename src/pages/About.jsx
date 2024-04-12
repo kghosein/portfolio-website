@@ -49,9 +49,7 @@ const About = () => (
     <section className="about-section">
       <Headings pageHeading={pageHeading} />
       <div className="hero-section">
-        <div className="hero-section__image">
-          <img src={myImage} alt="author" />
-        </div>
+        <img src={myImage} alt="author" className="hero-section__image" />
         <article className="hero-section__description">
           <p>{data.about.section1.bio}</p>
         </article>
@@ -62,7 +60,10 @@ const About = () => (
       <div className="projects-section__description">
         <p>
           For projects please refer to my{" "}
-          <ExternalLink link={data.about.links.github} icon={<ExternalLinkIcon />} />
+          <ExternalLink
+            link={data.about.links.github}
+            icon={<ExternalLinkIcon />}
+          />
           profile.
         </p>
       </div>

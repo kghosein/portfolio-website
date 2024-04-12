@@ -11,19 +11,14 @@ const Header = () => {
       <div className="inner-container">
         <header className="header">
           <div className="header__header-wrapper">
-            <h1 className="header__title">{data?.header?.title}</h1>
-            {windowWidth <= 767 ?
-              <div className="header__mbl-menu">
-                <ToggleMode />
-                <></>
-              </div>
-              :
-              <ToggleMode />
-            }
+            <h1 className="header__title">
+              {windowWidth <= 767
+                ? data?.header?.titleMbl
+                : data?.header?.title}
+            </h1>
+            {windowWidth > 767 && <ToggleMode />}
           </div>
-          {windowWidth > 767 &&
-            <Nav />
-          }
+          <Nav />
         </header>
       </div>
     </div>

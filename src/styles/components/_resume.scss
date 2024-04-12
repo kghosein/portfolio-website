@@ -1,5 +1,6 @@
 @use "../common/variables";
 @use "../common/common_styling";
+@use "../layouts/break_points";
 
 %common {
   $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
@@ -24,11 +25,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include break_points.px767 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__download-resume {
     @extend %common-a-style;
     padding: 1rem 4rem;
+
+    @include break_points.px767 {
+      display: block;
+      margin-top: 2rem;
+      align-self: flex-end;
+    }
   }
 
   &__view-mode {
@@ -46,23 +58,45 @@
       align-items: center;
       border-radius: 5rem;
       border: 5px solid variables.$color-purple;
-      width: 35rem;
+      max-width: 35rem;
       margin: 3rem auto 0 auto;
+      overflow: hidden;
+
+      @include break_points.px767 {
+        flex-direction: column;
+        border-radius: 3rem;
+
+        &>span {
+          transform: rotate(90deg) scale(1.6);
+        }
+
+        &>button {
+          &:first-of-type {
+            margin-bottom: -1.3rem;
+          }
+
+          &:last-of-type {
+            margin-top: -1.3rem;
+          }
+        }
+      }
 
       button {
         color: variables.$color-blue;
         font-size: 1.8rem;
         font-family: variables.$font-mono;
-        cursor: pointer;
+        @extend %cursor-pointer;
         padding: 1.25rem;
-        border-radius: 5rem;
         flex-basis: 50%;
         text-decoration: none;
         text-align: center;
         text-transform: capitalize;
         border: 0;
         background: transparent;
-        user-select: none;
+
+        @include break_points.px767 {
+          width: 100%;
+        }
 
         &:active {
           color: variables.$color-orange;
@@ -70,16 +104,6 @@
 
         &:disabled {
           pointer-events: none;
-        }
-
-        &.resume__view-mode__article-mode {
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-        }
-
-        &.resume__view-mode__accordion-mode {
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
         }
 
         &.active-mode {

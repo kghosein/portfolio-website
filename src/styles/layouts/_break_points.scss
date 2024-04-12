@@ -1,32 +1,28 @@
 $break-points: (
-  mobile: 767px,
-  desktop-small: 992px,
+  px767: 767px,
+  px1024: 1024px,
   ) !default; // !default: pass dynamic values on runtime
 
-// for regular media queries : max-width
-@mixin media-max-desktop-small($width) {
+// max width 1024px
+@mixin px1024-max($width) {
   @media (max-width: $width) {
     @content;
   }
 }
-
-// use media-max-desktop-small
-@mixin desktop-small {
-  @include media-max-desktop-small(map-get($break-points, "desktop-small")) {
+@mixin px1024 {
+  @include px1024-max(map-get($break-points, "px1024")) {
     @content;
   }
 }
 
-// for regular media queries : max-width
-@mixin media-max-mobile($width) {
+// max width 767px
+@mixin px767-max($width) {
   @media (max-width: $width) {
     @content;
   }
 }
-
-// use media-max-mobile
-@mixin mobile {
-  @include media-max-mobile(map-get($break-points, "mobile")) {
+@mixin px767 {
+  @include px767-max(map-get($break-points, "px767")) {
     @content;
   }
 }

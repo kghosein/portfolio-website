@@ -38,7 +38,6 @@ const Resume = () => {
         <div className="resume__view-mode__ctas">
           <ViewModeCta
             text={data.resume.section2.viewMode.article}
-            cssClass={"resume__view-mode__article-mode"}
             action={setArticleMode}
             mode={articleMode}
             setIsHover={setIsHover}
@@ -49,7 +48,6 @@ const Resume = () => {
           </span>
           <ViewModeCta
             text={data.resume.section2.viewMode.accordion}
-            cssClass={"resume__view-mode__accordion-mode"}
             action={setAccordionMode}
             mode={accordionMode}
             setIsHover={setIsHover}

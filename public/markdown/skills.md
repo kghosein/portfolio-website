@@ -7,6 +7,7 @@ appearanceOrder: 2
 - HTML/CSS
 - SASS, CSS frameworks
 - JavaScript
+- API integrations
 - Web application build systems
 
 #### Frontend Framework

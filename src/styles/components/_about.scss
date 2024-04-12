@@ -10,24 +10,18 @@
   justify-content: center;
   align-items: center;
 
-  @include break_points.desktop-small {
+  @include break_points.px1024 {
     grid-auto-flow: row;
-    grid-template-columns: unset;
+    grid-template-columns: auto;
+    margin-top: 3.5rem;
   }
 
   &__image {
+    border-radius: 1.5rem;
+    transform: translate(-4em, 2em) scale(1.3);
 
-    img {
-      border-radius: 1.5rem;
-      transform: translate(-4em, 4em) scale(1.3);
-
-      @include break_points.desktop-small {
-        transform: translateX(0) scale(1.1);
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 1rem;
-        margin-bottom: 2rem;
-      }
+    @include break_points.px1024 {
+      transform: translate(-2em, 0) scale(1.2);
     }
   }
 
@@ -40,14 +34,24 @@
     letter-spacing: 1px;
     word-spacing: 1px;
 
+    @include break_points.px1024 {
+      padding: 0 2rem;
+      transform: translateY(-4em);
+      font-size: 1.65rem;
+    }
+
     p {
       text-align: center;
     }
 
-    $themes : (light: (variables.$text-color: variables.$color-black,
+    $themes: (
+      light: (
+        variables.$text-color: variables.$color-black,
       ),
-      dark: (variables.$text-color: variables.$color-white,
-      ));
+      dark: (
+        variables.$text-color: variables.$color-white,
+      ),
+    );
 
     @include themify.themify($themes) {
       color: themify.themed(variables.$text-color);
@@ -62,9 +66,13 @@
       z-index: -1;
       color: variables.$color-orange;
 
-      @include break_points.desktop-small {
-        top: 98px;
-        left: 0;
+      @include break_points.px1024 {
+        content: "\201D";
+        top: 2em;
+        left: unset;
+        transform: scale(10);
+        right: 2em;
+        font-family: variables.$font-mukta;
       }
     }
   }
@@ -72,6 +80,10 @@
 
 .projects-section {
   margin-top: 12rem;
+
+  @include break_points.px1024 {
+    margin-top: 0;
+  }
 
   &__description {
     margin-top: 3rem;
@@ -81,10 +93,14 @@
       font-family: variables.$font-mukta;
       font-weight: 400;
 
-      $themes : (light: (variables.$text-color: variables.$color-black,
-          ),
-          dark: (variables.$text-color: variables.$color-white,
-          ));
+      $themes: (
+        light: (
+          variables.$text-color: variables.$color-black,
+        ),
+        dark: (
+          variables.$text-color: variables.$color-white,
+        ),
+      );
 
       @include themify.themify($themes) {
         color: themify.themed(variables.$text-color);

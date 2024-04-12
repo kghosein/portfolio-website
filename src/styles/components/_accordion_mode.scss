@@ -1,5 +1,6 @@
 @use "../common/variables";
 @use "../layouts/themify";
+@use "../common/common_styling";
 
 .accordion-mode {
   max-width: 800px;
@@ -80,7 +81,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      cursor: pointer;
+      @extend %cursor-pointer;
       border-top-right-radius: 1rem;
       border-top-left-radius: 1rem;
 
@@ -88,7 +89,7 @@
         background: transparent;
         border: 0;
         display: flex;
-        cursor: pointer;
+        @extend %cursor-pointer;
       }
 
       h3 {
