@@ -36,6 +36,7 @@
   "about": {
     "section1": {
       "heading": "About My Self",
+      "headingMbl": "About",
       "bio": "Mainly a front-end developer and constantly expanding my knowledge in the backend as well, knowledgeable in all the latest technologies in the JavaScript stack and other web technologies. Always eager to learn and explore new technologies, programming and problem solving drives me to continuously improve my skills and stay up-to-date with industry trends. With my expertise and enthusiasm for technology, I am confident in delivering high-quality and innovative solutions for any project I work on. Happy coding!"
     },
     "section2": {

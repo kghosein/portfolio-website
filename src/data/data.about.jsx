@@ -16,6 +16,11 @@ export const pageHeading = {
   "icon": <AboutIcon />
 }
 
+export const pageHeadingMbl = {
+  "text": data.about.section1.headingMbl,
+  "icon": <AboutIcon />
+}
+
 export const projectHeading = {
   "text": data.about.section2.heading,
   "icon": <Projects />
