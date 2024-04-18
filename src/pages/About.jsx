@@ -9,6 +9,7 @@ import {
   stackOverFlow,
   linkedIn,
   pageHeadingMbl,
+  socialLinksHeadingMbl,
 } from "../data/data.about"
 import ExternalLink from "../components/ExternalLink"
 import ExternalLinkIcon from "../components/svgs/ExternalLinkIcon"
@@ -74,7 +75,7 @@ const About = () => {
         </div>
       </section>
       <section className="social-links">
-        <Headings pageHeading={socialLinksHeading} />
+        <Headings pageHeading={windowWidth <= 767 ? socialLinksHeadingMbl : socialLinksHeading} />
         <SocialLinksWithHOC />
       </section>
     </>

@@ -31,6 +31,11 @@ export const socialLinksHeading = {
   "icon": <SocialLinks />
 }
 
+export const socialLinksHeadingMbl = {
+  "text": data.about.section3.headingMbl,
+  "icon": <SocialLinks />
+}
+
 export const github = {
   "href": data.about.links.github.href,
   "icon": <GithubIcon />,
