@@ -3,6 +3,7 @@ import Headings from "../components/Headings"
 import { FlexHOC, MainHOC } from "../templates/HOC"
 import ExternalLink from "../components/ExternalLink"
 import data from "../data/data.json"
+import SEO from "../components/meta/SEO"
 
 const WorkLink = ({ myService }) => {
   const link = {
@@ -32,13 +33,22 @@ const WorkLinks = () => (
 const WorkLinksWithHOC = FlexHOC(WorkLinks)
 
 const HireMe = () => (
-  <div className="hire-me">
-    <Headings pageHeading={pageHeading} />
-    <section className="work-links">
-      <p className="hire-me__description">{data.hire.description}</p>
-      <WorkLinksWithHOC />
-    </section>
-  </div>
+  <>
+    <SEO
+      title={"Khalaf Hosein | Hire Me"}
+      description={
+        "Web developer specializing in dynamic, complex web applications using modern technologies like React and Node."
+      }
+      pageLink={"https://khalafhosein.site/hire-me"}
+    />
+    <div className="hire-me">
+      <Headings pageHeading={pageHeading} />
+      <section className="work-links">
+        <p className="hire-me__description">{data.hire.description}</p>
+        <WorkLinksWithHOC />
+      </section>
+    </div>
+  </>
 )
 
 export default MainHOC(HireMe, pageHeading)

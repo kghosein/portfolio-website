@@ -16,6 +16,7 @@ import ExternalLinkIcon from "../components/svgs/ExternalLinkIcon"
 import { FlexHOC, MainHOC } from "../templates/HOC"
 import data from "../data/data.json"
 import { useWindowSize } from "@react-hookz/web"
+import SEO from "../components/meta/SEO"
 
 const SocialLink = ({ socialLink }) => {
   const link = {
@@ -52,8 +53,17 @@ const About = () => {
 
   return (
     <>
+      <SEO
+        title={"Khalaf Hosein | About"}
+        description={
+          "Web developer specializing in dynamic, complex web applications using modern technologies like React and Node."
+        }
+        pageLink={"https://khalafhosein.site/"}
+      />
       <section className="about-section">
-        <Headings pageHeading={windowWidth <= 767 ? pageHeadingMbl : pageHeading} />
+        <Headings
+          pageHeading={windowWidth <= 767 ? pageHeadingMbl : pageHeading}
+        />
         <div className="hero-section">
           <img src={myImage} alt="author" className="hero-section__image" />
           <article className="hero-section__description">
@@ -75,7 +85,11 @@ const About = () => {
         </div>
       </section>
       <section className="social-links">
-        <Headings pageHeading={windowWidth <= 767 ? socialLinksHeadingMbl : socialLinksHeading} />
+        <Headings
+          pageHeading={
+            windowWidth <= 767 ? socialLinksHeadingMbl : socialLinksHeading
+          }
+        />
         <SocialLinksWithHOC />
       </section>
     </>
