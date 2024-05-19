@@ -29,7 +29,13 @@ const Resume = () => {
         description={
           "Web developer specializing in dynamic, complex web applications using modern technologies like React and Node."
         }
-        pageLink={"https://khalafhosein.site/resume"}
+        pageLink={
+          articleMode
+            ? "https://khalafhosein.site/resume?articleMode=true"
+            : accordionMode
+            ? "https://khalafhosein.site/resume?accordionMode=true"
+            : "https://khalafhosein.site/resume"
+        }
       />
       <section className="resume__main-heading">
         <Headings pageHeading={pageHeading} />
