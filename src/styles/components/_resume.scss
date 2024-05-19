@@ -65,6 +65,7 @@
       @include break_points.px767 {
         flex-direction: column;
         border-radius: 3rem;
+        max-width: 18.75rem;
 
         &>span {
           transform: rotate(90deg) scale(1.6);
@@ -96,6 +97,7 @@
 
         @include break_points.px767 {
           width: 100%;
+          padding: 1rem;
         }
 
         &:active {
