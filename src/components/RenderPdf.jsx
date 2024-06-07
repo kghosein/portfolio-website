@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Document, Page, pdfjs } from "react-pdf"
-import resume from "/docs/khalaf-hosein-cv.pdf"
+import resume from "/docs/khalaf-hosein-resume.pdf"
 import "react-pdf/dist/esm/Page/AnnotationLayer.css"
 import "react-pdf/dist/esm/Page/TextLayer.css"
 import SadEmoji from "./svgs/SadEmoji"
