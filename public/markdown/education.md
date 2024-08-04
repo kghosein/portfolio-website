@@ -4,9 +4,8 @@ appearanceOrder: 1
 ---
 
 #### Academic
-- Government College University, Faisalabad, Pakistan **-** *BS CS 2019 - 2023 / CGPA 3.3*
-- Pakistan College, Muscat, Oman **-** *High School*
-- Pakistan School, Muscat, Oman **-** *Secondary School*
+- GC University, Faisalabad, Pakistan **-** *BS CS / 2019 - 2023 / CGPA 3.3*
+- Pakistan College, Muscat, Oman **-** *High School / 2016 / Grade A* 
 
 #### Professional
 - IELTS **-** *2017 / Band 6.0*

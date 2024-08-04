@@ -3,14 +3,13 @@ mainHeading: "<span>&#127775;</span> Experience"
 appearanceOrder: 3
 ---
 
-#### React Js Developer
+#### Web Development
+- HexamileSoft, Faisalabad, Pakistan **-** *Frontend React Js Developer / Oct 2022 - July 2024 / Full-time*
+- WebXperts, Faisalabad, Pakistan **-** *Frontend Developer / Sept 2020 - Sept 2021 / Full-time*
 
-HexamileSoft, Faisalabad, Pakistan
+#### Sales
+- AL Qanas AL Matmyzt, Muscat, Oman **-** *Sales & Promotions / 1 year (2018-19) / Full-time*
 
-*Oct 2022 - Present / Full-time*
-
-#### Frontend Developer
-
-WebXperts, Faisalabad, Pakistan
-
-*Sept 2020 - Sept 2021 / Full-time*
+#### Other
+- PopNosh, Faisalabad, Pakistan **-** *Sales & Promotions / 6 months (2018) / Part-time*
+- BAIC International, Muscat, Oman **-** *Sales & Promotions / 100 days (2017) / Contract*

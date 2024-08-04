@@ -4,18 +4,16 @@ appearanceOrder: 2
 ---
 
 #### Frontend
-- HTML/CSS
-- SASS, CSS frameworks
+- HTML / CSS / SASS / CSS frameworks
 - JavaScript
 - API integrations
-- Web application build systems
 
 #### Frontend Framework
 - React Js
 
-#### Backend (beginner)
-- Node/Express Js
-- SQL/NoSQL databases
-- Firebase
+#### Backend
+- Firebase **-** *Skill level: Intermediate*
+- Node/Express Js **-** *Skill level: Beginner*
+- SQL/NoSQL databases **-** *Skill level: Beginner*
 
 #### Version Controlling & Web Deployment
