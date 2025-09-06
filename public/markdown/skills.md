@@ -13,7 +13,7 @@ appearanceOrder: 2
 
 #### Backend
 - Firebase **-** *Skill level: Intermediate*
-- Node/Express Js **-** *Skill level: Beginner*
-- SQL/NoSQL databases **-** *Skill level: Beginner*
+- Node/Express Js **-** *Skill level: Intermediate*
+- SQL/NoSQL databases **-** *Skill level: Intermediate*
 
-#### Version Controlling & Web Deployment
+#### Version Controlling (Git) & Web Deployment
