@@ -1,5 +1,5 @@
 import ResumeIcon from "../components/svgs/ResumeIcon"
-import resumePdf from "/docs/khalaf-hosein-cv.pdf"
+import resumePdf from "/docs/Khalaf_Ibrahim_CV.pdf"
 import EyesIcons from "../components/svgs/EyesIcons"
 import data from "./data.json"
 
