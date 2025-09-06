@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async"
 
 const ogImage = "https://firebasestorage.googleapis.com/v0/b/portfolio-website-343f7.appspot.com/o/icon.svg?alt=media&token=a660ecb9-7e1b-411a-916c-f94d1d3f9762"
+export const baseUrl = "https://portfolio-website-343f7.web.app/"
 
 const SEO = ({ title, description, pageLink }) => (
   <Helmet>

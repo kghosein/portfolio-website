@@ -16,7 +16,7 @@ import ExternalLinkIcon from "../components/svgs/ExternalLinkIcon"
 import { FlexHOC, MainHOC } from "../templates/HOC"
 import data from "../data/data.json"
 import { useWindowSize } from "@react-hookz/web"
-import SEO from "../components/meta/SEO"
+import SEO, { baseUrl } from "../components/meta/SEO"
 
 const SocialLink = ({ socialLink }) => {
   const link = {
@@ -54,11 +54,11 @@ const About = () => {
   return (
     <>
       <SEO
-        title={"Khalaf Hosein | About"}
+        title={"Khalaf Ibrahim | About"}
         description={
           "Web developer specializing in dynamic, complex web applications using modern technologies like React and Node."
         }
-        pageLink={"https://khalafhosein.site/"}
+        pageLink={baseUrl}
       />
       <section className="about-section">
         <Headings

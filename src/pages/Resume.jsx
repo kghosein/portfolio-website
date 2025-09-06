@@ -11,7 +11,7 @@ import { useSearchParams } from "react-router-dom"
 import AccordionMode from "../components/AccordionMode"
 import { useState } from "react"
 import data from "../data/data.json"
-import SEO from "../components/meta/SEO"
+import SEO, { baseUrl } from "../components/meta/SEO"
 
 const setArticleMode = "/resume?articleMode=true"
 const setAccordionMode = "/resume?accordionMode=true"
@@ -25,16 +25,16 @@ const Resume = () => {
   return (
     <>
       <SEO
-        title={"Khalaf Hosein | Resume"}
+        title={"Khalaf Ibrahim | Resume"}
         description={
           "Web developer specializing in dynamic, complex web applications using modern technologies like React and Node."
         }
         pageLink={
           articleMode
-            ? "https://khalafhosein.site/resume?articleMode=true"
+            ? `${baseUrl}resume?articleMode=true`
             : accordionMode
-            ? "https://khalafhosein.site/resume?accordionMode=true"
-            : "https://khalafhosein.site/resume"
+            ? `${baseUrl}resume?accordionMode=true`
+            : `${baseUrl}resume`
         }
       />
       <section className="resume__main-heading">
